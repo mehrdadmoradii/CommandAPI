@@ -33,3 +33,4 @@ msbuild.wrn
 *.exe
 *.o
 *.so
+.vscode

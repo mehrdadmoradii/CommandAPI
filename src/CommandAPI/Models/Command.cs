@@ -16,5 +16,6 @@ namespace CommandAPI.Models {
 
         [Required]
         public string CommandLine { get; set; }
+        public int Test1 { get; set; }
     }
 }

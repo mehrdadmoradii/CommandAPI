@@ -11,6 +11,8 @@ using CommandAPI.Data;
 using Microsoft.Extensions.Configuration;
 using Microsoft.EntityFrameworkCore;
 using Npgsql;
+using AutoMapper;
+using Newtonsoft.Json.Serialization;
 
 namespace CommandAPI
 {
@@ -30,9 +32,16 @@ namespace CommandAPI
                 builder.Password = Configuration["Password"];
 
             services.AddScoped<ICommandAPIRepo, SqlCommandAPIRepo>();
-            services.AddDbContext<CommandContext>(opt => opt.UseNpgsql
-                    (builder.ConnectionString));
-            services.AddControllers();
+            services.AddDbContext<CommandContext>(opt 
+                    => opt.UseNpgsql (builder.ConnectionString));
+
+            // services.AddControllers();
+            services.AddControllers().AddNewtonsoftJson(s => 
+            {
+                s.SerializerSettings.ContractResolver = new 
+                CamelCasePropertyNamesContractResolver();
+            });
+            services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

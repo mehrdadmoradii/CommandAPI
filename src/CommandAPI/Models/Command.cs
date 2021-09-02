@@ -18,7 +18,3 @@ namespace CommandAPI.Models {
         public string CommandLine { get; set; }
     }
 }
-// "AllowedHosts": "*",
-//   "ConnectionStrings": {
-//     "PostgreSQLConnection": "User ID=cmddbuser; Password=pa55w0rd!; Host=localhost; Port=5432; Database=CmdAPI; Pooling=true;"
-//   }

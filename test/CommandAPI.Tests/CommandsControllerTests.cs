@@ -207,7 +207,7 @@ namespace CommandAPI.Tests
                 new Microsoft.AspNetCore.JsonPatch.JsonPatchDocument<CommandUpdateDto>{ });
 
             // Assert
-            Assert.IsType<NotFoundResult>(result);
+            Assert.IsType<OkObjectResult>(result);
         }
 
         private List<Command> GetCommands(int num)

@@ -11,7 +11,6 @@ namespace CommandAPI.Controllers
     [ApiController]
     [Route("api/[controller]")]
     public class CommandsController : ControllerBase {
-	    // random change
         private readonly ICommandAPIRepo _repository;
         private readonly IMapper _mapper;
         public CommandsController(ICommandAPIRepo repo, IMapper mapper)
